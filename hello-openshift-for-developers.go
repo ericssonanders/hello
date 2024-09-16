@@ -15,7 +15,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Fprintln(w, response)
-	fmt.Println("Servicing an impatient beginner's request. Host is: %s", ip)
+	fmt.Println("Servicing an impatient beginner's request. Host is:", ip)
 }
 
 func listenAndServe(port string) {
