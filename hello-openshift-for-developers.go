@@ -8,12 +8,14 @@ import (
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 	response := os.Getenv("RESPONSE")
+	ip := os.Getenv("FRONTEND_HOST")
+	
 	if len(response) == 0 {
 		response = "Hello OpenShift for Developers!!"
 	}
 
 	fmt.Fprintln(w, response)
-	fmt.Println("Servicing an impatient beginner's request.")
+	fmt.Println("Servicing an impatient beginner's request. Host is: %s", ip)
 }
 
 func listenAndServe(port string) {
